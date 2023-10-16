@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Presupuesto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gestor de Presupuesto</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Agregar categoría</h2>
+            <form id="form-category">
+                <label for="category-name">Nombre de categoría:</label>
+                <input type="text" id="category-name" required>
+                <label for="category-budget">Presupuesto inicial:</label>
+                <input type="number" id="category-budget" required>
+                <button type="submit">Agregar categoría</button>
+            </form>
+        </section>
+        <section>
+            <h2>Agregar transacción</h2>
+            <form id="form-transaction">
+                <label for="transaction-type">Tipo de transacción:</label>
+                <select id="transaction-type" required>
+                    <option value="">--Seleccionar tipo--</option>
+                    <option value="income">Ingreso</option>
+                    <option value="expense">Gasto</option>
+                </select>
+                <label for="transaction-category">Categoría:</label>
+                <select id="transaction-category" required>
+                    <option value="">--Seleccionar categoría--</option>
+                </select>
+                <label for="transaction-description">Descripción:</label>
+                <input type="text" id="transaction-description" required>
+                <label for="transaction-date">Fecha:</label>
+                <input type="date" id="transaction-date" required>
+                <label for="transaction-amount">Monto:</label>
+                <input type="number" id="transaction-amount" required>
+                <button type="submit">Agregar transacción</button>
+            </form>
+        </section>
+        <section>
+            <h2>Resúmen presupuestal</h2>
+            <div id="budget-summary"></div>
+            <button id="export-summary-csv">Exportar CSV</button>
+            <button id="export-summary-pdf">Exportar PDF</button>
+        </section>
+        <section>
+            <h2>Transacciones</h2>
+            <table id="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Categoría</th>
+                        <th>Descripción</th>
+                        <th>Fecha</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="export-transactions-csv">Exportar CSV</button>
+            <button id="export-transactions-pdf">Exportar PDF</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Gestor de Presupuesto &copy; 2021</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
